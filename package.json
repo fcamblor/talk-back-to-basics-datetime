@@ -1,0 +1,17 @@
+{
+    "name": "talk-back-to-basics-datetime",
+    "version": "0.0.1",
+    "scripts": {
+    },
+    "dependencies": {
+        "asciidoctor.js": "latest",
+        "browser-sync": "^2.26.3",
+        "chokidar": "^2.0.4",
+        "del": "^3.0.0",
+        "fs-extra": "^7.0.1",
+        "highlight.js": "^9.13.1",
+        "puppeteer": "^1.10.0",
+        "tldjs": "^2.3.1",
+        "workbox-build": "^3.6.3"
+    }
+}
