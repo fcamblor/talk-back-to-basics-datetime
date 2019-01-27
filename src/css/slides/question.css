@@ -1,0 +1,38 @@
+[data-slide="question"] {
+  align-items: center;
+  background-color: var(--color-ccc);
+  display: flex;
+  justify-content: center;
+}
+
+[data-slide="question"] .text {
+  color: var(--color-f);
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1.4;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+[data-slide="question"][data-position="before"],
+[data-slide="question"][data-position="after"] {
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  z-index: -2;
+}
+
+[data-slide="question"] .text {
+  transform: scale(1);
+  transition: transform 0s linear;
+}
+
+[data-slide="question"][data-position="current"] .text {
+  transform: scale(1.1);
+  transition-duration: 15s;
+}
+
+[data-slide="question"] .text code {
+  color: var(--color-e);
+}

@@ -2,6 +2,7 @@
     "name": "talk-back-to-basics-datetime",
     "version": "0.0.1",
     "scripts": {
+        "build": "node lib/build-prod.js"
     },
     "dependencies": {
         "asciidoctor.js": "latest",

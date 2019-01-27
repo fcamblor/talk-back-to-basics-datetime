@@ -1,0 +1,18 @@
+= #RetourAuxSources : Ne perdez plus votre Temps avec les Dates
+Frédéric Camblor
+:author-twitter: @fcamblor
+:author-avatar: img/fcamblor-avatar.jpg
+:author-company: 4SH France
+:author-company-logo: img/4sh_logo.svg
+:hashtags: #DateTimeBasics
+:event: Workshop 4SH
+:date: 13 février 2019
+:city: Bordeaux
+
+[slide=poster]
+Intro
+
+[.time]#00:00:00#
+
+[WARNING, caption=Avertissement]
+Cette présentation n'aborde aucune technologie à la mode.

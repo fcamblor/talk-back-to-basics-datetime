@@ -1,0 +1,61 @@
+[data-slide="poster"] {
+  background-color: var(--color-bbbb);
+  font-family: 'PT Sans Narrow', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+[data-slide="poster"] .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  line-height: 1.4;
+  height: 18rem;
+  text-align: center;
+}
+
+[data-slide="poster"] .pretitle {
+  color: var(--color-f);
+  font-size: 4rem;
+}
+
+[data-slide="poster"] .title {
+  color: var(--color-e);
+  font-size: 6.5rem;
+}
+
+[data-slide="poster"] .details {
+  align-items: center;
+  box-sizing: border-box;
+  color: var(--color-b);
+  display: flex;
+  flex: 1 1 0;
+  font-size: 2rem;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+[data-slide="poster"] .details::after {
+  background-image: url(../../img/poster-cookies.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 65% auto;
+  content: ' ';
+  flex: 1 1 0;
+  height: 100%;
+  order: 1;
+}
+
+[data-slide="poster"] .details_author {
+  text-align: left;
+  order: 0;
+}
+
+[data-slide="poster"] .details_event {
+  text-align: right;
+  order: 2;
+}

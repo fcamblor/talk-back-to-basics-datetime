@@ -1,0 +1,55 @@
+[data-slide="dialogue"] {
+  --gutter: 3rem;
+  background-color: var(--color-a);
+  background-image: url(../../img/sherlock.svg), url(../../img/watson.svg);
+  background-position: left var(--gutter) bottom var(--gutter), right var(--gutter) bottom var(--gutter);
+  background-repeat: no-repeat;
+  background-size: auto 12rem;
+  position: relative;
+}
+
+[data-slide="dialogue"] .sentenceWrapper {
+  align-items: center;
+  bottom: 16rem;
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  top: 2rem;
+}
+
+[data-slide="dialogue"] .sentenceWrapper[data-character="watson"] {
+  left: 12rem;
+  justify-content: flex-end;
+  right: 8rem;
+}
+
+[data-slide="dialogue"] .sentenceWrapper[data-character="sherlock"] {
+  left: 8rem;
+  justify-content: flex-start;
+  right: 12rem;
+}
+
+[data-slide="dialogue"] .sentence {
+  border-image-slice: 30 30 130 30;
+  border-style: solid;
+  border-width: 1rem 1rem 4.5rem 1rem;
+  color: var(--color-f);
+  font-family: "Just Another Hand", sans-serif;
+  font-size: 4.2rem;
+  line-height: 1;
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+[data-slide="dialogue"] .sentenceWrapper[data-character="watson"]  .sentence {
+  border-image-source: url(../../img/watson-bubble.svg);
+}
+
+[data-slide="dialogue"] .sentenceWrapper[data-character="sherlock"]  .sentence {
+  border-image-source: url(../../img/sherlock-bubble.svg);
+}
+
+[data-slide="dialogue"] .sentence strong {
+  color: var(--color-e);
+  font-weight: normal;
+}
