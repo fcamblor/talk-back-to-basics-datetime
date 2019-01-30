@@ -2,7 +2,8 @@
     "name": "talk-back-to-basics-datetime",
     "version": "0.0.1",
     "scripts": {
-        "build": "node lib/build-prod.js"
+        "build": "node lib/build-prod.js",
+        "generate-sw": "node lib/generate-sw.js"
     },
     "dependencies": {
         "asciidoctor.js": "latest",
