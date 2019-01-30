@@ -6,6 +6,10 @@ export default function configurePlugin () {
 
   return function initPlugin (deck) {
 
+    var byDeckIndexSoundsToPlay = {
+        0: '#clock-forest'
+    };
+
     const keyHandlers = {
       ArrowRight: () => deck.next(),
       PageDown: () => deck.next(),
@@ -13,6 +17,19 @@ export default function configurePlugin () {
       PageUp: () => deck.prev(),
       Home: () => deck.slide(0),
       End: () => deck.slide(deck.slides.length - 1),
+      // Play background sound
+      ' ': () => {
+          let audioSelector = byDeckIndexSoundsToPlay[deck.slide()];
+          if(audioSelector) {
+              let $audio = document.querySelector(audioSelector);
+              if($audio.currentTime) {
+                  $audio.pause();
+                  $audio.currentTime = 0;
+              } else {
+                  $audio.play();
+              }
+          }
+      }
     };
 
     function onKey ({ key }) {
