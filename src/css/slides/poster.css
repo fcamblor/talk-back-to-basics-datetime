@@ -40,7 +40,6 @@
 }
 
 [data-slide="poster"] .details::after {
-  background-image: url(../../img/poster-cookies.svg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 65% auto;
