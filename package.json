@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "scripts": {
         "build": "node lib/build-prod.js",
-        "generate-sw": "node lib/generate-sw.js"
+        "generate-sw": "node lib/generate-sw.js",
+        "dev": "node lib/run-dev-mode.js"
     },
     "dependencies": {
         "asciidoctor.js": "latest",
