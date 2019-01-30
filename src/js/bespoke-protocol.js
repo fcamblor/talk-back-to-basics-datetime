@@ -10,7 +10,7 @@ export default function configurePlugin () {
     });
 
     const steps = deck.slides.map((slide, slideIdx) => {
-      const notes = slide.nextElementSibling.classList.contains('notes')
+      const notes = (slide.nextElementSibling && slide.nextElementSibling.classList.contains('notes'))
         ? slide.nextElementSibling.innerHTML
         : '';
       return {
