@@ -1,0 +1,10 @@
+
+Des présentations dont je me suis très largement inspiré :
+- Date/time talk at ElixirConf 2015 in Austin
+  https://www.creativedeletion.com/2015/10/19/elixirconf-talk-date-time.html
+-
+
+Ma bibliographie :
+- https://www.temps-du-sud.com/cadran-solaire/
+- https://www.timeanddate.com/time/international-atomic-time.html
+- https://fr.wikipedia.org/wiki/Temps_moyen_de_Greenwich
