@@ -1,0 +1,17 @@
+[data-slide="interrogation"] {
+    background-color: var(--color-a);
+    font-family: 'PT Sans Narrow', sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    padding: 0 7vw;
+    line-height: 1.4;
+}
+
+[data-slide="interrogation"] .message {
+    font-size: 6rem;
+    color: var(--color-ddd);
+    text-align: center;
+}

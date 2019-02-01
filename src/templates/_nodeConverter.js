@@ -10,6 +10,7 @@ const location = require('./location');
 const media = require('./media');
 const poster = require('./poster');
 const question = require('./question');
+const interrogation = require('./interrogation');
 const section = require('./section');
 const text = require('./text');
 const video = require('./video');
@@ -31,6 +32,9 @@ module.exports = {
     }
     if (attrs.slide === 'question') {
       return question(node);
+    }
+    if (attrs.slide === 'interrogation') {
+      return interrogation(node);
     }
     if (attrs.slide === 'text') {
       return text(node);
