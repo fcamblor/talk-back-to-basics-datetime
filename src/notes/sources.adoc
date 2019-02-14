@@ -44,7 +44,9 @@ Bibliographie :
 - https://www.threeten.org/
 - https://momentjs.com/docs/
 - https://momentjs.com/timezone/docs/
-
+- https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/2532962#2532962
+- https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/3269325#3269325
+- https://codeofmatt.com/author/matt/
 
 Merci enfin à Hubert Sablonnière pour son outil bespoke (que je n'ai finalement pas utilisé pour ce premier run)
 mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk :
