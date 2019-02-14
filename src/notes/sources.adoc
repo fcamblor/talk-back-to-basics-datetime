@@ -1,0 +1,49 @@
+
+Des pr√©sentations dont je me suis tr√®s largement inspir√© :
+- Lau Taarnskov's Date/time talk at ElixirConf 2015 in Austin
+  https://www.creativedeletion.com/2015/10/19/elixirconf-talk-date-time.html
+- Bruce Benamran french video about Second definition
+  https://www.youtube.com/watch?v=Y2kz-JdvIh0
+- Maggie Pint's Date & Time talk at That Conference (Wisconsin Dells)
+  https://fr.slideshare.net/MaggiePint/that-conference-date-and-time
+
+Bibliographie :
+- https://en.wikipedia.org/wiki/Year_2000_problem
+- https://en.wikipedia.org/wiki/24-hour_clock
+- https://www.temps-du-sud.com/cadran-solaire/
+- http://www.ens-lyon.fr/RELIE/Cadrans/activpedago/TextesCours/Temps.htm
+- https://fr.wikipedia.org/wiki/Temps_moyen_de_Greenwich
+- https://fr.wikipedia.org/wiki/Horloge_atomique
+- https://fr.wikipedia.org/wiki/C%C3%A9sium
+- https://fr.wikipedia.org/wiki/Temps_universel
+- https://www.timeanddate.com/time/international-atomic-time.html
+- https://fr.wikipedia.org/wiki/Temps_universel_coordonn%C3%A9
+- https://en.wikipedia.org/wiki/Coordinated_Universal_Time
+- https://en.wikipedia.org/wiki/International_Atomic_Time
+- https://fr.wikipedia.org/wiki/Epoch#cite_note-proleptic-gregorian-1
+- https://en.wikipedia.org/wiki/Leap_second
+- https://en.wikipedia.org/wiki/Network_Time_Protocol
+- https://en.wikipedia.org/wiki/Year_2038_problem
+- https://en.wikipedia.org/wiki/ISO_8601
+- https://www.w3.org/QA/Tips/iso-date
+- https://www.iso.org/iso-8601-date-and-time-format.html
+- https://tools.ietf.org/html/rfc3339
+- https://en.wikipedia.org/wiki/Time_zone
+- https://en.wikipedia.org/wiki/List_of_UTC_time_offsets
+- https://en.wikipedia.org/wiki/List_of_time_zones_by_country
+- https://en.wikipedia.org/wiki/List_of_time_zone_abbreviations
+- https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+- https://en.wikipedia.org/wiki/Daylight_saving_time
+- https://en.wikipedia.org/wiki/Week
+- https://en.wikipedia.org/wiki/ISO_week_date
+- https://en.wikipedia.org/wiki/12-hour_clock
+- https://fr.wikipedia.org/wiki/Ann%C3%A9e_s%C3%A9culaire
+- https://en.wikipedia.org/wiki/Chronology
+- https://fr.wikipedia.org/wiki/Calendrier_copte
+
+
+Merci enfin ‡ Hubert SablonniËre pour son outil bespoke (que je n'ai finalement pas utilisÈ pour ce premier run)
+mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk :
+- https://www.youtube.com/watch?v=y6mwekHkgVQ
+- https://github.com/hsablonniere/talk-back-to-basics-cookies
+
