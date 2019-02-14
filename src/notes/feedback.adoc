@@ -2,4 +2,6 @@
   (organisée en ères, et dont un changement d'ère va avoir lieu pour la première fois depuis la démocratisation
   de l'informatique)
 - Comment les timezones sont déterminées sur des devices mobiles qui, par définition, peuvent changer de timezone
-
+- Davantage insister sur l'overflow de 2038 qui n'existe que pour les timestamps stockés en 32 bits
+  Parler de la représentation 64 bits qui est faite, par exemple en Java, où 64 bits son réservés â la partie en secondes
+  et 32 bits sont réservés à la partie nanosecondes
