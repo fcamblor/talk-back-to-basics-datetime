@@ -1,0 +1,5 @@
+- Chronologie du Japon dont je pourrais parler, cf https://fr.wikipedia.org/wiki/Chronologie_du_Japon
+  (organisée en ères, et dont un changement d'ère va avoir lieu pour la première fois depuis la démocratisation
+  de l'informatique)
+- Comment les timezones sont déterminées sur des devices mobiles qui, par définition, peuvent changer de timezone
+
