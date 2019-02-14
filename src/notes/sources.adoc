@@ -22,6 +22,7 @@ Bibliographie :
 - https://en.wikipedia.org/wiki/International_Atomic_Time
 - https://fr.wikipedia.org/wiki/Epoch#cite_note-proleptic-gregorian-1
 - https://en.wikipedia.org/wiki/Leap_second
+- https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html
 - https://en.wikipedia.org/wiki/Network_Time_Protocol
 - https://en.wikipedia.org/wiki/Year_2038_problem
 - https://en.wikipedia.org/wiki/ISO_8601
@@ -40,6 +41,9 @@ Bibliographie :
 - https://fr.wikipedia.org/wiki/Ann%C3%A9e_s%C3%A9culaire
 - https://en.wikipedia.org/wiki/Chronology
 - https://fr.wikipedia.org/wiki/Calendrier_copte
+- https://www.threeten.org/
+- https://momentjs.com/docs/
+- https://momentjs.com/timezone/docs/
 
 
 Merci enfin à Hubert Sablonnière pour son outil bespoke (que je n'ai finalement pas utilisé pour ce premier run)
