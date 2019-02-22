@@ -48,8 +48,8 @@ Bibliographie :
 - https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/3269325#3269325
 - https://codeofmatt.com/author/matt/
 
-Merci enfin à Hubert Sablonnière pour son outil bespoke (que je n'ai finalement pas utilisé pour ce premier run)
-mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk :
+Merci enfin Ã  Hubert SablonniÃ¨re pour son outil [bespoke]() (que je n'ai finalement pas utilisÃ© pour ce premier run)
+mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk sur les cookies :
 - https://www.youtube.com/watch?v=y6mwekHkgVQ
 - https://github.com/hsablonniere/talk-back-to-basics-cookies
 
