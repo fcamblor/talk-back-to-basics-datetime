@@ -1,5 +1,6 @@
 
 Des présentations dont je me suis très largement inspiré :
+
 - Lau Taarnskov's Date/time talk at ElixirConf 2015 in Austin
   https://www.creativedeletion.com/2015/10/19/elixirconf-talk-date-time.html
 - Bruce Benamran french video about Second definition
@@ -7,7 +8,9 @@ Des présentations dont je me suis très largement inspiré :
 - Maggie Pint's Date & Time talk at That Conference (Wisconsin Dells)
   https://fr.slideshare.net/MaggiePint/that-conference-date-and-time
 
+
 Bibliographie :
+
 - https://en.wikipedia.org/wiki/Year_2000_problem
 - https://en.wikipedia.org/wiki/24-hour_clock
 - https://www.temps-du-sud.com/cadran-solaire/
@@ -50,6 +53,7 @@ Bibliographie :
 
 Merci enfin à Hubert Sablonnière pour son outil [bespoke]() (que je n'ai finalement pas utilisé pour ce premier run)
 mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk sur les cookies :
+
 - https://www.youtube.com/watch?v=y6mwekHkgVQ
 - https://github.com/hsablonniere/talk-back-to-basics-cookies
 
