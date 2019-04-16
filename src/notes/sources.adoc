@@ -21,6 +21,7 @@ Bibliographie :
 - https://fr.wikipedia.org/wiki/Temps_universel
 - https://www.timeanddate.com/time/international-atomic-time.html
 - https://www.timeanddate.com/time/dst/
+- https://www.timeanddate.com/time/zones/z
 - https://fr.wikipedia.org/wiki/Temps_universel_coordonn%C3%A9
 - https://en.wikipedia.org/wiki/Coordinated_Universal_Time
 - https://en.wikipedia.org/wiki/International_Atomic_Time
