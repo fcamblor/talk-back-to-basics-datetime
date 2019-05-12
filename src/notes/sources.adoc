@@ -8,6 +8,29 @@ Des présentations dont je me suis très largement inspiré :
 - Maggie Pint's Date & Time talk at That Conference (Wisconsin Dells)
   https://fr.slideshare.net/MaggiePint/that-conference-date-and-time
 
+Pointeurs abordés pendant la présentation :
+
+* Un certain nombre de problèmes que les plus grands ont rencontré : 
+  ** https://www.iphonote.com/actu/138170/bug-dst-redemarrage-apple-watch-series-4
+  ** https://www.cnet.com/news/new-years-hangover-for-zune-users/
+  ** https://www.programmez.com/actualites/twitter-victime-du-bug-de-lan-2015-21906
+  ** https://en.wikipedia.org/wiki/Year_2000_problem
+
+* Le fonctionnement de NTP : https://en.wikipedia.org/wiki/Network_Time_Protocol
+* La spec DateTime ISO : https://www.w3.org/TR/NOTE-datetime
+* Les fuseaux horaires / timezone dans le monde : https://en.wikipedia.org/wiki/Time_zone
+* Le repository github traçant les changements de tzdata IANA : https://github.com/eggert/tz/blob/master/europe
+* Quelques principes de fonctionnement pour mettre à jour les tzdata dans les différents systèmes :  
+  ** Java : https://www.oracle.com/technetwork/java/javase/tzdata-versions-138805.html
+  ** MySQL : https://dev.mysql.com/doc/refman/8.0/en/time-zone-support.html
+  ** Node : https://www.npmjs.com/package/geo-tz
+
+* Stocker les dates en UTC n'est pas tout le temps une Silver Bullet (particulièrement pour les dates dans le futur) : https://codeblog.jonskeet.uk/2019/03/27/storing-utc-is-not-a-silver-bullet/
+* Le 30 décembre 2011 n'existe pas dans les îles Samoa : https://www.timeanddate.com/news/time/samoa-dateline.html
+* Un problème de parsing de date Local/UTC en JS en fonction du séparateur : https://twitter.com/seldo/status/1091861205260500992
+* Les "vieux" timezone offset sont cassés en JS : https://codeofmatt.com/javascript-date-type-is-horribly-broken/
+* Les Local Datetime, c'est le mal : http://blog.schauderhaft.de/2018/03/14/dont-use-localdatetime/
+
 
 Bibliographie :
 
@@ -52,6 +75,7 @@ Bibliographie :
 - https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/2532962#2532962
 - https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/3269325#3269325
 - https://codeofmatt.com/author/matt/
+
 
 Merci enfin à Hubert Sablonnière pour son outil [bespoke]() (que je n'ai finalement pas utilisé pour ce premier run)
 mais dont j'ai honteusement repris le template de slides (et la palette de couleurs) de son (excellent) talk sur les cookies :
