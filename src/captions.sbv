@@ -1,0 +1,1258 @@
+0:00:00.500,0:00:02.009
+Bonjour à toutes et à tous
+
+0:00:02.590,0:00:08.159
+Aujourd'hui j'ai envie de vous parler d'un sujet sur lequel je me suis souvent cassé les dents .. je ne sais pas si vous c'est pareil...
+
+0:00:09.070,0:00:12.090
+mais en fait j'ai cette idée de talk depuis
+
+0:00:12.460,0:00:16.080
+un bon moment maintenant et ça fait plusieurs années que je note dans un petit calepin
+
+0:00:16.270,0:00:20.879
+tous les problèmes de dates, d'heure et de temps en général
+
+0:00:21.250,0:00:23.819
+que j'ai pu rencontrer ... tout ça pour les partager avec vous aujourd'hui
+
+0:00:25.150,0:00:29.100
+Mon objectif c'est que dès mardi (parce que lundi est férié)
+
+0:00:30.400,0:00:35.250
+vous vous posiez les bonnes questions dès que vous manipulez une date ou une heure sur votre application
+
+0:00:35.829,0:00:42.209
+un deuxième objectif, un peu moins avoué, va être de vous divertir juste après le repas, sans que vous ne vous endormiez
+
+0:00:43.090,0:00:45.090
+... on va voir si je vais y arriver !
+
+0:00:45.250,0:00:51.149
+Je m'appelle Frédéric Camblor, je suis développeur web chez 4SH, une petite société de services sur Bordeaux
+
+0:00:51.430,0:00:53.796
+qui a fêté ses 10 ans il ya pas très longtemps.
+
+0:00:53.796,0:00:57.149
+On fait principalement du forfait et des applications mobiles et web.
+
+0:00:58.480,0:01:02.009
+Je vais commencer par vous poser une première question : est-ce qu'il ya des gens ici
+
+0:01:02.230,0:01:05.610
+qui n'ont jamais eu de problème avec les dates et les heures dans leurs applications ?
+
+0:01:06.729,0:01:10.079
+bon c'est cool .. il n'y a pas beaucoup de mains levées ...
+
+0:01:10.479,0:01:15.269
+Il ne faut pas avoir honte de faire des bugs sur les dates et les heures...
+
+0:01:15.330,0:01:17.330
+... parce que c'est arrivé aux meilleurs
+
+0:01:17.350,0:01:21.000
+C'est arrivé à Apple, à Microsoft, à Twitter
+
+0:01:21.909,0:01:25.499
+ça arrive à pas mal de monde finalement ... et je pense que les plus vieux d'entre vous
+
+0:01:25.750,0:01:34.500
+se rappellent de ce bon vieux bug de l'an 2000 qui nous avait prédit l'apocalypse et qui n'est finalement pas arrivée
+
+0:01:35.409,0:01:38.249
+Tout ça pour dire qu'il faut vraiment dédramatiser ces bugs là
+
+0:01:38.530,0:01:41.610
+vous n'êtes ni les premiers ni les derniers à qui ça va arriver
+
+0:01:42.460,0:01:47.700
+et on va essayer de voir ensemble comment essayer de limiter la casse dans le futur.
+
+0:01:48.200,0:01:55.100
+Mais avant de parler du futur on va remonter un peu le temps pour voir comment le temps a évolué.
+
+0:01:55.500,0:01:58.409
+Si on se replonge quelques centaines d'années en arrière...
+
+0:01:59.500,0:02:04.500
+Avant qu'on ait des montres à notre poignet, comment se repérions-nous dans le temps ?
+
+0:02:05.000,0:02:08.000
+On se repérait avec le soleil, ici avec une horloge solaire
+
+0:02:08.500,0:02:11.579
+Le principe, ici, c'est que lorsque le soleil est au Zénith
+
+0:02:12.250,0:02:15.210
+Alors cela signifie qu'il est midi, midi étant considéré comme le milieu de la journée
+
+0:02:16.030,0:02:18.570
+Ça c'est ce qu'on appelle "l'heure vraie"
+
+0:02:19.510,0:02:25.349
+Le principal inconvénient de ce truc là c'est que lorsqu'il fait nuageux ou qu'il fait nuit ça marche beaucoup moins bien
+
+0:02:25.900,0:02:31.260
+Un autre inconvénient, c'est que si 2 villes partagent la même latitude
+
+0:02:32.050,0:02:38.249
+mais sont à des longitudes différentes alors leur heure vraie va survenir à des moments chronologiquement différents
+
+0:02:38.950,0:02:43.170
+alors pour éviter que ces heures qui varient d'une ville à une autre soit un problème
+
+0:02:43.720,0:02:47.249
+Une notion de temps standardisé a été mise en place
+
+0:02:48.880,0:02:55.900
+À l'observatoire de Greenwich au méridien d'origine des longitudes près de Londres en Angleterre
+
+0:02:56.800,0:03:03.100
+Cette heure standardisée, c'est l'heure GMT (Greenwich Mean Time)
+Je pense que vous en avez tous entendu parler
+
+0:03:04.090,0:03:11.970
+Mais est-ce que vous saviez que cette heure GMT est dépréciée ?
+GMT est déprécié au profit d'UTC.
+
+0:03:12.610,0:03:17.820
+Et donc là vous allez me dire "mais GMT et UTC : c'est pas la même chose ?"
+Eh bien non : ce n'est pas la même chose !
+
+0:03:18.459,0:03:22.889
+Pour répondre plus précisément à cette question, on va devoir définir ce qu'est une seconde
+
+0:03:23.590,0:03:26.040
+Une seconde c'est une unité du système international
+
+0:03:26.950,0:03:31.020
+La bonne nouvelle c'est que tout le monde sur terre a adopté ce référentiel
+
+0:03:31.300,0:03:36.700
+- On ne peut pas en dire autant de toutes les unités du système international -
+Bref..
+
+0:03:36.730,0:03:40.739
+Je ne sais pas si vous vous êtes déjà posé la question "Pourquoi une seconde dure une seconde ?"
+
+0:03:41.950,0:03:46.559
+_Je me la suis posée_
+
+0:03:46.559,0:03:48.220
+Derrière cette définition se cache une notion de confiance
+
+0:03:48.220,0:03:54.149
+Pour avoir confiance dans la mesure de la seconde on a toujours eu besoin de se reposer sur des phénomènes physiques
+
+0:03:54.550,0:03:58.109
+qui étaient à la fois réguliers et mesurables
+
+0:03:58.989,0:04:02.699
+La première mesure se basait sur la rotation de la terre sur elle-même
+
+0:04:02.980,0:04:08.399
+On se base donc sur les astres : quand le soleil revient à une même position
+
+0:04:08.830,0:04:12.269
+dans le ciel c'est qu'il s'est écoulé une journée
+
+0:04:12.820,0:04:16.529
+Et c'est donc en 1889 qu'a été édicté la première définition de la seconde :
+
+0:04:17.140,0:04:24.539
+1 jour c'est 24 heures.
+1 heure c'est 60 minutes.
+1 minute c'est 60 secondes.
+
+0:04:24.730,0:04:30.000
+Et donc une seconde c'est un 86400ème de jour (définition de 1889)
+
+0:04:30.000,0:04:34.500
+Je vous passe les différentes définitions qui ont eu lieu au 20ème siècle
+
+0:04:35.000,0:04:40.379
+Parce qu'on en a eu plein qui étaient dûes au fait qu'un 86400ème de jours, ça n'est pas une mesure très précise
+
+0:04:41.470,0:04:43.470
+Tout ça pour en arriver à un nombre :
+
+0:04:44.350,0:04:52.400
+9 milliards 192 millions 631 mille 770 :
+savez-vous à quoi correspond ce nombre ?
+
+0:04:53.560,0:04:59.160
+Il s'agit du nombre de changements d'état d'un atome de Césium 133 pendant exactement une seconde
+
+0:04:59.590,0:05:02.489
+Et ça, c'est la dernière définition de la seconde aujourd'hui !
+
+0:05:03.490,0:05:05.170
+C'est un peu compliqué comme définition
+
+0:05:05.170,0:05:10.170
+Mais c'est ce qui sert à définir ce qu'on appelle le temps atomique international et c'est ce qu'on observe aujourd'hui dans une horloge atomique
+
+0:05:10.470,0:05:15.930
+On regarde les changements d'état de notre atome de Césium, on les compte
+
+0:05:16.360,0:05:18.360
+Et quand on en arrive à ce chiffre fatidique, on considère qu'il s'est écoulé une seconde
+
+0:05:18.790,0:05:26.100
+"Pourquoi le Césium ?"
+Le césium est un élément qui a ses changements d'états qui sont extrêmement réguliers dans le temps
+
+0:05:26.640,0:05:34.600
+On estime en gros qu'on va avoir une déviation d'environ une seconde en 100 millions d'années
+
+0:05:35.920,0:05:38.219
+Il y a le temps de voir venir un certain nombre de bugs...
+
+0:05:39.250,0:05:44.790
+Ce temps atomique international a été défini en 1967 et est instaurée en 1972
+
+0:05:45.310,0:05:51.240
+C'est une définition assez récente et c'est une mesure qui est la base d'autres mesures du système international comme le mètre
+
+0:05:51.240,0:05:55.679
+Je ne sais pas si vous saviez que la définition du mètre est aujourd'hui basée sur la vitesse de la lumière
+
+0:05:56.500,0:06:03.150
+Et qui dit vitesse dit temps, qui dit temps dit secondes : la mesure de la seconde impacte la mesure du mètre
+
+0:06:04.600,0:06:11.000
+Pour en revenir à UTC, il s'agit d'une mesure qui est basée sur ce temps atomique international
+
+0:06:12.490,0:06:16.000
+Une propriété d'UTC qui est assez intéressante est qu'il est agnostique de tout ce qui est géopolitique
+
+0:06:16.570,0:06:21.960
+Il n'y a pas de notion d'heure d'été et d'heure d'hiver en UTC donc ça c'est bien pratique pour éviter un certain nombre de bugs
+
+0:06:21.960,0:06:31.500
+Et son EPOCH (l'EPOCH c'est le temps 0) est défini au 1er janvier 1970 à minuit heure de Greenwich.
+
+0:06:38.900,0:06:42.200
+Si on revient maintenant à la différence entre GMT et UTC...
+
+0:06:42.700,0:06:54.800
+Ce qu'il faut savoir, c'est que la période de révolution de la terre est un phénomène qui n'est pas tout à fait aussi régulier que le changement d'état d'un atome de Césium
+
+0:06:56.000,0:07:01.400
+Il existe quelques irrégularités qui tiennent du fait de phénomènes de marées ou de tremblements de terre
+
+0:07:01.900,0:07:06.670
+Qui impactent un tout petit peu la période de révolution de la terre et qui fait que
+
+0:07:07.610,0:07:17.000
+UT1, ce référentiel qui permet de dire qu'une journée s'est écoulée de manière astronomique,
+
+0:07:17.500,0:07:28.100
+Et bien UT1 va avoir tendance à dévier par rapport au temps atomique international, du fait de ces phénomènes qui sont difficilement prédictibles
+
+0:07:28.600,0:07:33.699
+C'est la raison de l'introduction de ce qu'on appelle des leap seconds (secondes intercalaires)
+
+0:07:34.730,0:07:46.300
+introduites tous les 6 mois par un organisme qui s'appelle l'IERS
+
+0:07:47.270,0:07:55.900
+qui va déterminer s'il faut ou non introduire une leap second fin juin ou fin décembre
+
+0:07:56.300,0:07:58.300
+Ces Leap Seconds ne sont déterminées que 6 mois à l'avance maximum.
+
+0:07:58.910,0:08:05.670
+Pour récapituler, les Leap Seconds correspondent à l'alignement de l'heure solaire/astronomique avec l'heure atomique
+
+0:08:06.820,0:08:10.300
+Pour information, en Java, la manière dont les Leap Second ont été implémentées dans la classe Instant
+
+0:08:10.660,0:08:19.000
+se base sur le fait de répartir cette Leap Second sur les 1000 dernières secondes de juin ou décembre
+
+0:08:19.500,0:08:24.000
+de manière à ce que cela soit complètement transparent pour les utilisateurs : vous ne "verrez" jamais une Leap Second en Java
+
+0:08:24.500,0:08:29.399
+D'autres implémentations font afficher 23 heures 59 et 60 secondes mais ce n'est pas ce qui a été décidé en Java
+
+0:08:30.700,0:08:34.259
+Du coup, on peut se demander comment ces Leap Seconds sont communiquées aux différents systèmes
+
+0:08:34.540,0:08:40.000
+Ça me permet d'introduire le protocole NTP (Network Time Protocol)
+
+0:08:40.500,0:08:45.839
+qui part du principe que chaque ordinateur a une horloge qui est basée sur un oscillateur à Quartz
+
+0:08:46.450,0:08:50.300
+Cette horloge-là étant bien moins précise qu'une horloge atomique
+
+0:08:50.830,0:08:56.800
+Les horloges internes de nos laptops auront donc tendance à dériver par rapport au temps atomique international
+
+0:08:57.200,0:09:04.100
+NTP va résoudre ce problème en synchronisant, de proche en proche, tous les noeuds d'un réseau maillé
+
+0:09:04.600,0:09:06.600
+L'idée est donc de partir de noeuds racine (il en existe environ 300 répartis un peu partout sur le globe)
+
+0:09:07.540,0:09:13.290
+qui sont directement couplés avec une horloge atomique
+
+0:09:13.620,0:09:18.360
+Ces noeuds racine se synchroniseront avec un certain nombre de noeuds
+
+0:09:18.880,0:09:26.500
+et, de proche en proche, à chaque "saut", on va perdre un petit peu en précision, à cause de la latence
+
+0:09:26.860,0:09:40.000
+Par contre NTP va nous garantir que la synchronisation sera tout le temps en deçà de la seconde par rapport à une horloge atomique
+
+0:09:40.600,0:09:44.730
+La conclusion de tout ça c'est que le temps est une notion toute relative
+
+0:09:45.580,0:09:47.790
+(quelques personnes ont fait 2-3 théories là-dessus)
+
+0:09:48.340,0:09:51.389
+et il dépend bien souvent de l'angle par lequel on le prend
+
+0:09:51.389,0:09:57.000
+On va voir maintenant les différents angles qu'on a l'habitude de rencontrer dans une application informatique
+
+0:09:57.500,0:10:00.100
+Je vais commencer par les timestamps
+
+0:10:00.600,0:10:08.340
+Le timestamp est clairement la représentation la plus simple du temps : le nombre de secondes (ou millisecondes) écoulées depuis le 1er Janvier 1970
+
+0:10:10.020,0:10:16.400
+Et qui dit représentation entière dit qu'il y a une limite dans cette représentation
+
+0:10:16.920,0:10:22.500
+Les timestamps ont souvent deux composantes : une composante en secondes
+
+0:10:23.000,0:10:26.810
+et une composante de "précision" en millisecondes, microsecondes ou nanosecondes
+
+0:10:27.690,0:10:41.200
+Si la composante seconde de votre timestamp est codé sur 32 bits et qu'on démarre au 1er janvier 1970
+
+0:10:41.700,0:10:48.050
+alors il va y avoir un problème à cette date-là (en 2038) parce qu'on va voir un overflow : la seconde après cette date on passera en 1901
+
+0:10:52.140,0:10:59.100
+Alors je vous rassure, en Java typiquement, ce problème est géré depuis très longtemps
+
+0:10:59.880,0:11:05.000
+mais sur de vieux systèmes à base de mainframe en Cobol, je ne serais pas étonné que ce bug survienne.
+
+0:11:05.520,0:11:13.500
+Attention si vous stockez des dates dans le futur : ça peut être particulièrement problématique.
+
+0:11:14.190,0:11:17.720
+Seconde représentation : les datetime ISO 8601 / RFC 3339
+
+0:11:18.240,0:11:23.000
+Je vais simplifier cela par "Datetime ISO" pendant tout le talk : ça sera plus simple
+
+0:11:23.850,0:11:26.500
+Cette représentation est vraiment du 1 pour 1 par rapport à un timestamp
+
+0:11:27.000,0:11:34.500
+Elle permet de représenter de manière beaucoup plus lisible (par un humain) un moment dans le temps
+
+0:11:36.120,0:11:44.000
+Montrez-moi un datetime ISO, je saurai vous dire à quelle date cela correspond alors que pour un timestamp c'est plus compliqué : je dois sortir ma calculette
+
+0:11:44.500,0:11:50.000
+Une particularité sur les datetime ISO c'est qu'à la fin, le "Z" ou le "+01:00" c'est ce qu'on appelle un timezone offset
+
+0:11:50.500,0:11:58.600
+qui va permettre de définir une heure locale et de décaler votre heure locale par rapport à l'heure de référence en UTC
+
+0:11:59.160,0:12:06.300
+On rentrera un peu plus dans les détails dans les slides qui viennent
+
+0:12:06.870,0:12:10.640
+Dernière représentation : ce qu'on appelle une date et/ou heure "locale"
+
+0:12:11.840,0:12:17.229
+Il s'agit là certainement des dates les plus compliquées à gérer...
+
+0:12:17.660,0:12:25.700
+Une date/heure locale est très souvent localisée à un endroit géographique et, bien souvent, on n'a pas toutes les infos
+
+0:12:26.300,0:12:32.700
+pour être capable de représenter ça sur une frise chronologique et pour être capable de dire "c'est à ce moment-là exactement dans le temps"
+
+0:12:32.960,0:12:35.289
+elles portent plein de notions implicites
+
+0:12:36.050,0:12:41.500
+quand vous êtes en train de dire "je vais poser une réunion tous les lundi matin à 10h"
+
+0:12:42.140,0:12:44.949
+Vous n'avez pas dit que vous êtes en timezone Europe/Paris
+
+0:12:45.620,0:12:50.859
+Vous n'avez pas précisé si en heure d'été ou en heure d'hiver ça serait tout le temps 10 heures
+(implicitement j'imagine que c'est le cas)
+
+0:12:51.740,0:13:02.600
+il ya plein de non-dits sur une date/heure locale et il va falloir jouer avec ces non-dits et peut-être essayer de les "fixer"
+
+0:13:03.170,0:13:07.210
+Une autre problématique sur les dates et les heures locales c'est qu'on peut les dissocier
+
+0:13:07.310,0:13:12.300
+Une datetime ISO ou un timestamp, c'est *forcément* une date et une heure (un moment précis dans le temps)
+
+0:13:12.800,0:13:16.800
+Une date/heure locale, on peut juste parler de date (un jour d'anniversaire par exemple)
+
+0:13:17.300,0:13:23.200
+ou juste une heure : typiquement quand vous parlez de la réunion à 10 heures tous les lundis, il s'agit d'une heure locale
+
+0:13:25.070,0:13:29.600
+On a pu voir que tout était une question de perspective ou d'angle de vue
+
+0:13:30.100,0:13:37.800
+Chaque représentation va apporter un lot d'avantages et de limitations et il va falloir essayer de naviguer entre ces différents angles d'attaque
+
+0:13:39.350,0:13:42.900
+On va attaquer un gros morceau : les Timezones
+
+0:13:43.670,0:13:51.800
+Avant toute chose j'aimerais clarifier un point parce que par abus de langage on confond souvent Timezone et Timezone offset
+
+0:13:52.300,0:13:59.900
+La définition d'une Timezone : il s'agit d'un lieu géographique et géopolitique qui observe une évolution uniforme de son heure
+
+0:14:00.400,0:14:02.920
+Dans notre cas, ça va être Europe/Paris pour nous
+
+0:14:02.920,0:14:09.700
+Un Timezone offset, c'est tout simplement le décalage à une date donnée de l'heure locale de notre Timezone par rapport à l'heure UTC
+
+0:14:10.250,0:14:17.400
+Ici, on peut voir tous les fuseaux horaires sur terre : il en existe beaucoup !
+
+0:14:18.050,0:14:20.259
+Ils sont répartis de manière plus ou moins homogènes
+
+0:14:20.420,0:14:22.420
+On peut voir que certains pays s'en fichent complètement
+
+0:14:22.420,0:14:30.600
+Par exemple, la Chine, qui s'étale sur plein de fuseaux horaires, n'a adopté qu'une et une seule Timezone
+
+0:14:31.339,0:14:34.479
+On a des disparités dans le monde et il faut faire avec
+
+0:14:36.170,0:14:42.579
+Une chose importante : à partir d'une Timezone on n'est pas capable de déterminer de manière sûre un Timezone offset
+
+0:14:43.040,0:14:50.700
+Typiquement dans notre cas, en fonction de la date, on va être en UTC+1 ou en UTC+2 en fonction de si on est en heure d'été ou d'hiver
+
+0:14:51.200,0:14:58.000
+La bonne équation, c'est de dire : on prend une timezone, on prend un moment dans le temps, on prend ce qu'on appelle une TZ Table
+
+0:14:58.500,0:15:00.039
+(on va rentrer un peu plus dans les détails juste après)
+
+0:15:00.290,0:15:04.750
+et à partir de ces trois composantes là on va être capable de déterminer notre timezone offset
+
+0:15:05.959,0:15:11.000
+Quelques points clés sur les Timezones : une timezone va définir des offsets depuis UTC
+
+0:15:11.200,0:15:17.679
+Ces offsets vont de -12:00 à +14:00, ils sont généralement d'une heure, mais pas tout le temps
+
+0:15:18.050,0:15:23.620
+Par exemple les Chatham Island en Nouvelle Zélande sont en +12:45 / +13:45
+
+0:15:23.810,0:15:26.319
+En vrai, ça peut aller jusqu'au quart d'heure
+
+0:15:27.860,0:15:38.300
+Il existe aujourd'hui 2 tables de référence qui sont IANA et les Windows Tables, sachant que IANA est la plus majoritairement utilisée
+
+0:15:38.899,0:15:51.900
+Fun fact sur les Timezones : aux Pays Bas, entre 1909 et 1937, le timezone offset *légal* était de 19 minutes et 32.13 secondes exactement.
+
+0:15:52.430,0:16:03.000
+Le prédicat qui est de dire que "le timezone offset est défini en minutes", eh bien il vole en éclats avec une règle comme ça ... Dommage :-)
+
+0:16:04.519,0:16:10.000
+Ici, on peut voir à quoi ressemble une table IANA
+
+0:16:10.500,0:16:16.800
+Une table IANA est une simple base de données fichier qui va lister, Timezone par Timezone, un ensemble de règles
+
+0:16:17.800,0:16:20.200
+qui vont permettre de déterminer le timezone offset à une date donnée
+
+0:16:20.400,0:16:27.200
+ce qui nous intéresse ça va être les 2 dernières lignes où, en tant qu'Européen, on peut voir que depuis 1981 on change d'heure le dernier dimanche de Mars
+
+0:16:27.400,0:16:31.000
+et puis depuis 1996 on change d'heure le dernier dimanche d'Octobre
+
+0:16:31.520,0:16:35.500
+(Spoiler alert : ça va peut-être changer d'ici pas longtemps ...)
+
+0:16:37.460,0:16:47.000
+Ce fichier vous pouvez le retrouver sur un repos Github mis à jour en continu et si vous regardez un peu l'historique de ce repo Github
+
+0:16:47.300,0:16:51.200
+vous allez vous apercevoir qu'il y a des changements assez fréquents
+
+0:16:51.410,0:16:55.600
+Quand je dis assez souvent c'est peut-être 3-4 commits par semaine
+
+0:16:56.090,0:17:07.300
+Il faut savoir qu'il y a eu 9 releases des TZ Tables en 2018, et 3 en 2017...
+... c'est quelque chose qui change, souvent !
+
+0:17:07.819,0:17:13.569
+Vous allez peut-être alors vous posez la question "Mais si ces règles changent, comment mon système va-t-il se mettre à jour ?"
+
+0:17:13.819,0:17:19.700
+Je vais prendre quelques exemples qui sont loins d'être exhaustifs : en Java que se passe-t-il ?
+
+0:17:20.000,0:17:27.300
+En Java, les TZ Data sont livrées dans le JRE donc si vous mettez à jour votre JRE régulièrement, vous allez bénéficier des dernières TZ Data, c'est cool !
+
+0:17:27.589,0:17:32.649
+Si vous mettez pas votre JRE à jour régulièrement, il y a quand même un outil, qui s'appelle le TZUpdater tool
+
+0:17:34.500,0:17:41.000
+et qui permet d'aller télécharger les dernières TZ Data et d'aller mettre à jour votre JRE/JDK sans forcément avoir à installer un nouveau JRE
+
+0:17:41.200,0:17:43.700
+Donc ça, c'est plutôt cool aussi !
+
+0:17:43.700,0:17:47.740
+Il faut par contre penser à le faire mais au moins vous avez les outils pour le faire.
+
+0:17:49.580,0:17:56.050
+Mysql c'est un peu plus roots comme fonctionnement : dans la doc ils vous disent
+
+0:17:56.240,0:18:03.800
+"Il faudrait exécuter cette ligne de commande qui va se baser sur les TZData de votre système linux (qui sont dans /usr/share/zoneinfos)"
+
+0:18:04.000,0:18:15.600
+et qui vont venir alimenter les tables système de mysql avec les dernieres règles de timezone offset
+Donc là en gros c'est "débrouillez-vous"
+
+0:18:16.340,0:18:27.000
+En Node, il y a carrément un paquet qui permet de mapper les TZData : à chaque nouvelle version, vous avez une nouvelle version du paquet sur lequel s'aligner
+
+0:18:27.200,0:18:29.900
+Là aussi, il faut faire les choses à la main !
+
+0:18:30.560,0:18:34.280
+La conclusion de tout ça c'est vraiment : 
+"posez vous la question !"
+
+0:18:34.280,0:18:42.900
+Clairement si vous êtes en train de faire une application franco-française ça ne sera pas très grave de ne pas être à jour sur les dernières règles des TZ Tables
+
+0:18:43.120,0:18:50.700
+Si par contre vous êtes en train de développer une application déployée dans le monde entier avec des utilisateurs un peu partout et où les heures et les dates sont quelque chose d'important
+
+0:18:50.950,0:19:02.600
+Peut-être qu'il va falloir être un peu plus vigilant sur la mise à jour de ces TZ Tables parce qu'il vous faudra absorber les changements de règles en continu
+
+0:19:02.890,0:19:04.890
+Quelques points clés sur les TZData...
+
+0:19:05.920,0:19:13.500
+C'est quelque chose qui est très liée à la géopolitique : les règles changent régulièrement et peuvent changer très subitement !
+
+0:19:13.800,0:19:23.700
+Par exemple, en Russie, un changement de règle a été mis en application 1 mois après avoir été décidé !
+
+0:19:24.500,0:19:29.500
+2-3 applications ont dû se planter à ce moment là ... mais ça peut arriver assez vite !
+
+0:19:30.100,0:19:43.500
+Autre point : j'en parlais il y a quelques minutes en spoiler, mais l'Europe a lancé une consultation fin 2018 visant à abolir le changement d'heure
+
+0:19:43.720,0:20:01.500
+Aujourd'hui, on en est à une étape où les états membre doivent se prononcer d'ici à fin 2019 pour dire s'ils l'appliquent et quel timezone offset ils conservent
+
+0:20:01.930,0:20:10.100
+Du coup en France, début Mars, il y a eu le résultat d'un sondage auquel il y a eu plus de 2 millions de votants
+
+0:20:10.300,0:20:19.000
+et où 83 % des votants se prononçaient pour la fin du changement d'heure et 59% choisissaient de rester sur l'heure d'été
+
+0:20:19.240,0:20:29.200
+Il y a peut-être de nouvelles règles dans les TZ Data qui vont arriver d'ici pas si longtemps, la mise en application de cette directive Européenne étant à horizon 2023
+
+0:20:29.490,0:20:31.760
+(ce n'est pas forcément dans si longtemps que ça...)
+
+0:20:34.020,0:20:40.400
+Dernier point : sur les TZData, ne considérez vraiment jamais rien comme acquis
+
+0:20:40.620,0:20:48.800
+typiquement si vous commencez à créer des dates dans le futur, dites-vous que d'ici à ce que vous arriviez à cette date dans le futur, les règles auront peut-être changé
+
+0:20:49.080,0:20:55.300
+et le timezone offset que vous aurez déterminé aujourd'hui ne sera peut-être pas/plus bon dans 5 ans
+
+0:20:55.530,0:21:08.800
+Faites donc bien attention à ça !
+Ma préconisation là-dessus étant que si vous pouvez éviter de créer des dates dans le futur, faites-le !
+
+0:21:09.800,0:21:18.300
+Si par contre vous n'avez pas le choix, le palliatif à ça c'est de stocker la timezone de l'utilisateur à l'origine de la date que vous allez stocker dans le futur
+
+0:21:18.500,0:21:24.500
+En effet, si vous avez la timezone, vous serez en mesure de redresser des changements de règles sur les timezone offsets
+
+0:21:25.000,0:21:32.800
+Si vous n'avez pas la timezone, vous serez perdu et vous ne pourrez pas redresser vos dates dans le futur.
+
+0:21:33.150,0:21:44.000
+On vient de parcourir la plus grosse source de bizarreries, mais il reste un sujet important à aborder : les changements d'heure
+
+0:21:45.210,0:21:48.049
+Nous allons donc parler de DST (Daylight Saving Time)
+
+0:21:49.350,0:22:06.000
+Ces changements ont été instauré en 1916 et ils embêtent 2 fois par an ceux qui ont la chance comme moi d'être parent
+
+0:22:06.770,0:22:13.000
+Mais cela embête également les développeurs que nous sommes car les changements d'heure sont souvent une source de bugs sur nos applications
+
+0:22:13.700,0:22:21.000
+Le principe est de dire que nous allons avoir deux changements d'heure important chaque année : changement d'heure d'hiver et changement d'heure d'été
+
+0:22:21.400,0:22:24.100
+et puis dans l'hémisphère Sud ça va être l'inverse
+
+0:22:24.500,0:22:28.700
+Je vais me focaliser tout d'abord sur le changement d'heure d'été...
+
+0:22:29.130,0:22:33.400
+Pendant le changement d'heure d'été on va rencontrer ce qu'on appelle un "Local Time Gap"
+
+0:22:33.800,0:22:38.400
+dont je vais vous donner un exemple ici, en pseudo momentjs (code simplifié/raccourci)
+
+0:22:39.059,0:22:45.169
+Si je prends une date au 31 Mars 2019, le jour du changement d'heure, à 1h10 du matin
+
+0:22:45.390,0:22:47.390
+momentjs me dit : "OK tu es en UTC+1"
+
+0:22:47.670,0:22:55.200
+Je prends exactement la même date et puis je rajoute une heure : là le résultat est à 3h10 du matin UTC+2
+
+0:22:55.600,0:22:59.500
+donc là tout le continuum de 2h à 3h du matin n'existe pas
+
+0:23:00.720,0:23:09.400
+Une chose qu'il est très important de connaître, peu importe la librairie que vous utilisez
+
+0:23:09.830,0:23:15.530
+Il faut savoir comment se comporte votre librairie avec les dates/heures qui n'existent pas
+
+0:23:15.750,0:23:20.089
+Là en l'occurrence, momentjs est plutôt sympa : il m'a redressé mon heure
+
+0:23:20.429,0:23:27.000
+2h10 n'est pas censé exister et il me l'a changé en 3h10 UTC+2 : ça c'est plutôt cool.
+
+0:23:27.400,0:23:33.400
+En java, par exemple, une exception est levée si vous tentez de parser une heure qui n'existe pas
+
+0:23:33.800,0:23:37.400
+Donc ça c'est un comportement qu'il faut bien connaître, peu importe la librairie utilisée
+
+0:23:37.860,0:23:41.000
+Le miroir du changement d'heure d'été : le changement d'heure d'hiver
+
+0:23:41.700,0:23:47.900
+Même type d'exemple : je me place le 27 octobre, le jour du changement d'heure d'hiver, à 2h10 du matin
+
+0:23:49.020,0:23:51.680
+MomentJS me dit 2h10 du matin UTC+2
+
+0:23:51.680,0:23:55.189
+Je rajoute une heure et il dit 2h10 du matin UTC+1
+
+0:23:55.410,0:24:00.050
+Ici on a donc le phénomène inverse : tout le continuum entre 2h et 3h du matin va exister 2 fois
+
+0:24:01.380,0:24:06.000
+et là je sais pas si vous voyez mais il y a un truc qui est un peu embêtant...
+
+0:24:06.400,0:24:11.000
+Sur la première ligne de code, momentJS a fait un choix
+
+0:24:11.500,0:24:17.000
+Il aurait pu me dire 2h10 du matin UTC+1, mais il a fait le choix d'UTC+2
+
+0:24:17.400,0:24:25.000
+donc ça aussi c'est quelque chose qu'il faut que vous connaissiez sur la librairie/API que vous utilisez :
+
+0:24:25.500,0:24:29.500
+comment elle se comporte quand il y a 2 choix possibles pour une heure donnée
+
+0:24:30.020,0:24:33.200
+Dans ce cas, momentJS aurait pu me jeter mais il ne l'a pas fait.
+
+0:24:33.620,0:24:44.800
+et il y a même pire que ça en vrai : le résultat de cette ligne va être différent en fonction de votre navigateur
+
+0:24:45.500,0:24:51.000
+Chrome va afficher UTC+2 et Safari va afficher UTC+1 ...
+
+0:24:51.500,0:24:56.859
+... Voilà voilà : de bons bugs en perspective :-)
+
+0:24:58.400,0:25:08.400
+Et donc pour récapituler tout ça, une fausse bonne idée : "notre batch de facturation passe tous les jours à 2h30 du matin (heure locale) ...
+
+0:25:09.070,0:25:11.230
+... car il s'agit du moment où le système est le moins sollicité"
+
+0:25:12.169,0:25:18.000
+Conclusion : le batch de facturation, le jour où il y aura un changement d'heure, soit il ne passera pas du tout, soit il passera deux fois
+
+0:25:18.530,0:25:26.500
+En vrai, normalement, ça n'arrive pas ce genre de choses dès lors que votre CRON s'exécute sur un système qui est en UTC
+
+0:25:27.000,0:25:30.969
+Car on a vu qu'UTC n'avait ni heure d'été ni heure d'hiver : vous ne serez donc pas confronté à ce problème
+
+0:25:31.040,0:25:36.500
+Une bonne pratique ici est d'éviter que vos CRON ne se basent sur une heure locale
+
+0:25:37.000,0:25:43.200
+Ce qu'il faut enlever dans la fausse bonne idée, c'est le "heure locale", pour le remplacer par une heure en UTC
+
+0:25:43.700,0:25:45.700
+Quelques questions que je me suis posées...
+
+0:25:47.059,0:25:49.389
+"Est-ce que DST varie toujours d'une heure ?"
+
+0:25:50.450,0:25:54.600
+Alors la réponse est "oui" ... mais il y a une petite astérisque à coté...
+
+0:25:55.130,0:26:01.400
+Par le passé on a eu des changements d'heure d'été et d'hiver qui étaient de 20 minutes, 30 minutes, 40 minutes .. voire 2 heures
+
+0:26:01.970,0:26:11.300
+Aujourd'hui c'est 1 heure partout ... sauf sur une île d'irréductibles Australiens, les Lord Howe Islands qui ont un shift de 30 minutes
+
+0:26:11.800,0:26:15.000
+C'est le seul cas particulier que j'ai pu rencontrer
+
+0:26:15.500,0:26:18.320
+Deuxième question : "Peut-on avoir plus de deux shifts par an ?"
+
+0:26:18.320,0:26:20.000
+et là encore la réponse est "oui"
+
+0:26:20.500,0:26:30.000
+Le cas atypique c'est au Maroc, pendant le Ramadan : si le Ramadan tombe pendant DST, et bien ils annulent DST durant la durée du Ramadan
+
+0:26:30.500,0:26:35.600
+et puis à la fin du Ramadan ils reviennent en DST : du coup ils changent 4 fois d'heure
+
+0:26:36.100,0:26:50.500
+Et le point qui est un peu embêtant c'est que le début du Ramadan n'est pas une science ultra exacte car basé sur des observations du croissant de Lune
+
+0:26:51.010,0:26:58.700
+Et du coup, je pense que ce type de contraintes doit être assez complexe à gérer au niveau des TZ Tables
+
+0:26:59.440,0:27:02.800
+Voilà donc qui vient rajouter un peu de complexité
+
+0:27:03.340,0:27:05.641
+On va voir maintenant un certain nombre d'idées reçues ...
+
+0:27:05.641,0:27:07.800
+"Il y a 24 heures dans une journée et 365 jours dans une année"
+
+0:27:08.300,0:27:11.428
+Je pense que celles-là vous voyez où je veux en venir ...
+
+0:27:12.429,0:27:14.840
+Je pense que vous connaissez tous les années bissextiles
+
+0:27:14.840,0:27:17.639
+J'imagine également que vous connaissez tous la règle de tous les quatre ans
+
+0:27:17.740,0:27:21.089
+Je préfère quand même préciser un petit peu les exceptions à la règle qui sont moins connues
+
+0:27:21.490,0:27:27.400
+Ce sont les multiples de 4, sauf les années séculaires (multiples de 100) sauf les années multiples de 400
+
+0:27:27.800,0:27:32.300
+Ça signifie que l'année 2000 était bissextile malgré qu'elle soit un multiple de 100 (c'était un multiple de 400)
+
+0:27:32.740,0:27:40.800
+et l'année 2100 ne sera pas bissextile parce que c'est un multiple de 4 mais c'est également un multiple de 100
+
+0:27:42.250,0:27:46.600
+"Une journée fait 24 heures" : ce n'est pas tout le temps vrai quand on a un changement d'heure d'été ou d'hiver
+
+0:27:46.600,0:27:54.200
+Elle peut faire 23 ou 25 heures ... sauf dans les Lord Howe Islands où elles peuvent faire 23h30 ou 24h30.
+
+0:27:54.940,0:27:59.700
+Ça m'amène à une question sur le code Java suivant : "qui a raison ?"
+
+0:28:00.200,0:28:07.800
+En gros je prends une date en entrée et j'additionne tantôt 1 jour, tantôt 24 heures
+
+0:28:08.340,0:28:10.340
+Est-ce que vous voyez où je veux en venir ?
+
+0:28:10.450,0:28:23.500
+Le résultat de ce truc là va être différent le jour où vous allez changer d'heure : avec un plusDays(1) à aujourd'hui 10h, vous serez à 10h demain (l'heure locale est conservée)
+
+0:28:24.279,0:28:27.809
+Si vous faites un plusHours(24) alors vous allez prendre le shift d'1h (ce qui peut être voulu)
+
+0:28:28.480,0:28:37.800
+Faites donc bien attention aux méthodes que vous appelez sur votre API parce que ça peut avoir des significations un peu différentes
+
+0:28:38.500,0:28:46.000
+Cette remarque s'applique également sur les plusYear() parce qu'une année ne fait pas tout le temps 365 jours
+
+0:28:46.520,0:28:54.000
+Un bon fun fact encore : Le 30 Décembre 2011 n'existe pas dans les îles Samoa
+
+0:28:54.560,0:29:05.900
+Ils ont eu la bonne idée de changer de Timezone offset le 29 décembre pour passer d'UTC-11 à UTC+13, soit un shift de 24 heures
+
+0:29:06.620,0:29:08.859
+et donc il y a une journée, dans cette timezone, qui n'existe pas
+
+0:29:09.650,0:29:16.200
+Je sais pas si vous le voyez le bug, là, dans votre calendar au 29 décembre...
+
+0:29:16.730,0:29:23.200
+Je pense pas qu'il y ait beaucoup de calendars qui aient fait un "if ma timezone est celle des îles Samoa, alors je grise le 29 décembre..."
+
+0:29:23.600,0:29:28.400
+Je pense qu'il y a là aussi quelques bugs qui doivent exister...
+
+0:29:28.940,0:29:33.699
+Autre idée reçue : "Comparer des dates, c'est facile"
+
+0:29:35.270,0:29:46.500
+Je sais pas si vous voyez où est le problème dans cet exemple Java où je prends 2 dates en entrée et où je dois dire si elles sont égales ou non...
+
+0:29:47.000,0:29:52.119
+La question ici est surtout de savoir ce que vous voulez faire : est-ce que vous voulez faire un test d'égalité ou d'identité ?
+
+0:29:52.370,0:30:02.000
+En java si vous prenez deux dates qui représentent exactement le même timestamp, et bien si les timezones sont différentes, equals() retournera false
+
+0:30:02.570,0:30:07.000
+Par contre il existe une méthode isEqual() qui va retourner true dans ce cas-là
+
+0:30:07.550,0:30:16.900
+Encore une fois, l'objectif est que, peu importe l'API/librairie que vous utilisez, posez-vous bien la question, lorsque vous comparez des dates :
+
+0:30:17.450,0:30:20.830
+Est-ce que vous voulez être agnostique de la timezone ou pas ?
+En général ce sera le cas.
+
+0:30:21.440,0:30:28.700
+Mais ce n'est pas forcément tout le temps le cas dans les implémentations par défaut
+
+0:30:29.230,0:30:34.700
+Nouvelle idée reçue : l'objet Date en Javascript, c'est de la balle
+
+0:30:35.299,0:30:40.500
+Un exemple bien moisi sur le constructeur de l'objet Date :
+
+0:30:41.000,0:30:47.000
+En fonction du format de date -tirets vs slash- le navigateur va considérer que vous voulez créer une date locale ou une date UTC
+
+0:30:47.500,0:30:54.900
+Et du coup vous allez vous prendre un shift de N heures en fonction de si vous avez utilisé des tirets ou des slashs
+
+0:30:55.460,0:31:05.700
+Ca peut notamment impacter la saisie si votre utilisateur est sur un timezone offset négatif : la date saisie sera potentiellement décalée d'1 jour
+
+0:31:06.380,0:31:13.800
+il ya plein d'autres blagues en JS : les mois qui commence à 0, la gestion des timezones et l'internationalisation qui sont inexistantes
+
+0:31:14.360,0:31:19.500
+et surtout la gestion des anciens timezone offsets qui est complètement cassée
+
+0:31:21.000,0:31:25.179
+_Ce que j'appelle ancien timezone offset, c'est tous les offsets antérieurs à 1970_
+
+0:31:25.880,0:31:28.449
+C'est un peu ballot parce que des fois on a des dates de naissance à saisir... bref
+
+0:31:28.900,0:31:41.700
+Mais en tout cas soyez bien conscients qu'aucun navigateur n'est tout blanc : il y a des bugs dans chacun d'entre eux sur les dates antérieures à 1970
+
+0:31:42.200,0:31:48.100
+Faites-y donc très attention et ne leur faites pas aveuglément confiance
+
+0:31:49.669,0:31:52.500
+La conclusion de tout ça c'est vraiment d'utiliser une librairie :
+
+0:31:53.000,0:32:02.300
+En JS il y a MomentJS / Moment-timezone, ou bien dayjs/luxon si vous considérez -pas complètement à tord- que MomentJS est trop volumineux
+
+0:32:02.800,0:32:03.400
+Et puis vous avez également date-fns
+
+0:32:03.730,0:32:09.600
+L'idée ici c'est vraiment d'utiliser une API pour éviter de vous tirer une balle dans le pied
+
+0:32:10.309,0:32:14.300
+On va maintenant voir quelques bonnes pratiques issues de la vie réelle
+
+0:32:14.700,0:32:19.900
+Première bonne pratique : vos serveurs doivent être en UTC, partout !
+
+0:32:20.480,0:32:23.500
+La timezone de votre OS doit être en UTC
+
+0:32:24.020,0:32:28.480
+La timezone de votre BDD doit être en UTC.. ça vous ne pouvez pas tout le temps le faire mais généralement ça peut se définir...
+
+0:32:28.840,0:32:35.000
+Il faut faire attention aux 2 derniers (BDD / Serveur d'App) qui se reposent souvent par défaut sur la timezone de l'OS
+
+0:32:35.400,0:32:41.400
+Bien souvent, quand vous fixez la timezone de l'OS, vous la fixez sur la DB et le serveur d'App
+
+0:32:41.800,0:32:44.700
+_ce n'est pas tout le temps le cas mais c'est bien souvent le cas_
+
+0:32:45.480,0:32:56.700
+Fixer vos serveurs en UTC permet premièrement de ne pas être assujetti aux heures d'été/hiver
+
+0:32:57.480,0:33:13.200
+Le deuxième argument est que l'utilisation d'une timezone différente entre client et serveur va vous permettre de détecter les bugs de conversions de timezones
+
+0:33:13.700,0:33:15.890
+Si vous êtes sur des timezones identiques vous n'allez jamais voir ces bugs
+
+0:33:15.980,0:33:23.700
+car si vous codez mal (ou oubliez) vos conversions, vous ne le verrez pas : vous allez avoir l'impression que ça marche bien alors que vos données seront fausses
+
+0:33:24.270,0:33:30.379
+Une autre bonne pratique que je rencontre assez souvent dans l'esprit des gens avec qui j'ai eu l'occasion de travailler...
+
+0:33:31.680,0:33:44.340
+Posons le use case très basique : on a une liste de messages, et un message est simplement constitué d'une date de création stockée en UTC
+
+0:33:44.340,0:33:46.340
+en plus d'un identifiant et d'un contenu de message
+
+0:33:46.380,0:33:59.500
+Puis sur votre frontend, vous avez un moteur de recherche qui permet de saisir une date pour rechercher tous les messages publiés à cette date-là
+
+0:34:01.380,0:34:06.700
+Ici, on a plusieurs choses qui sont implicites à cause du fait que cette date saisie soit une date locale
+
+0:34:07.170,0:34:10.400
+On en parlait au départ dans les dates locales, il ya plein de choses qui sont implicites
+
+0:34:12.500,0:34:18.400
+On va voir 3 types d'implémentations pour représenter ce use case...
+
+0:34:18.870,0:34:24.859
+Une mauvaise implémentation qui va partir du principe que l'utilisateur n'ayant saisi qu'une date, on va l'envoyer telle qu'elle à notre serveur
+
+0:34:25.770,0:34:36.300
+Le problème ici, c'est que le serveur ne va pas trop savoir quoi faire d'une date comme ça et il n'aura pas d'autre choix que de la considérer comme une date UTC
+
+0:34:36.900,0:34:44.000
+Le problème c'est que l'utilisateur est en Europe/Paris : en appliquant une timezone UTC on va appliquer un shift d'1h et ne pas avoir les bons messages
+
+0:34:44.460,0:34:52.700
+La deuxième option qui est un peu meilleure car elle permet au moins d'obtenir un bon résultat, c'est d'envoyer la timezone de l'utilisateur en plus de la date saisie
+
+0:34:53.250,0:34:57.700
+L'inconvénient de cette implémentation c'est que ça va vraiment être dépendant de ce que vous faites coté serveur
+
+0:34:58.260,0:35:07.600
+Côté serveur, si vous faites mal les choses, vous pourriez vous tromper si vous appliquez les conversions de timezones dans le mauvais ordre
+
+0:35:08.490,0:35:14.479
+Là où je veux en venir c'est que finalement, de manière implicite, quand vous demandez une date à votre utilisateur
+
+0:35:14.760,0:35:30.700
+c'est qu'il va demander à récupérer tous les messages du 9 février 2019 entre 00:00 et 23:59 "de sa timezone" (implicitement UTC+1)
+
+0:35:31.200,0:35:38.600
+Je pense donc que la meilleure API, c'est de se dire qu'on a une range de 2 dates et qu'on recherche les messages sur cette range de dates
+
+0:35:39.100,0:35:46.400
+En bonus, vous bénéficiez d'une API qui permet de faire des recherches sur des ranges qui ne sont pas forcément que sur un seul jour
+
+0:35:47.400,0:35:59.900
+Faites attention, par contre, à limiter la longueur de ces ranges pour éviter de se faire DDoS par vos clients à cause d'un trop gros volume de données retournées
+
+0:36:00.510,0:36:02.357
+Tout ça c'est ce que j'appelle les Date Search Pattern.
+
+0:36:02.357,0:36:15.100
+Au fil de mon expérience, je me suis forgé une conviction assez forte : il fait très rarement sens de faire des recherches sur des dates uniques
+
+0:36:15.600,0:36:21.200
+À chaque fois que j'ai été confronté à cette problématique, je me suis aperçu qu'il y avait une range qui se cachait derrière
+
+0:36:21.720,0:36:33.300
+Je n'ai pas envie d'être dogmatique là-dessus mais à minima, lorsque vous avez une API de recherche avec une date, posez-vous la question de la range de dates
+
+0:36:33.800,0:36:36.600
+Autre point : faites si possible les conversions côté appelant.
+
+0:36:37.170,0:36:41.149
+C'était le cas dans mon exemple : le start et le end étaient remplis par le front
+
+0:36:41.880,0:36:51.300
+Il y a une petite astérisque : je vous ai dit tout à l'heure que sur les dates antérieures à 1970 il ne fallait pas faire confiance aux dates en Javascript
+
+0:36:51.990,0:37:00.400
+Donc si vous êtes sur des dates assez vieilles et que vous avez besoin d'un timezone offset qui soit valide, utilisez plutôt l'option 2 qui était en jaune
+
+0:37:00.600,0:37:11.800
+qui faisait gérer par le serveur ces conversion : au moins, même si le serveur utilise un mauvais offset, il aura tout le temps faux de la même manière
+
+0:37:12.000,0:37:18.400
+Vous n'aurez pas des timezone offsets qui, en fonction du navigateur, seront bons ou mauvais sur votre application
+
+0:37:18.870,0:37:22.999
+Une dernière bonne pratique : stocker et rechercher vos dates times en UTC
+
+0:37:23.400,0:37:29.100
+Ça me paraît évident mais c'est toujours bien de le rappeler
+
+0:37:29.600,0:37:36.400
+Il ya une petite astérisque sur le "stocker" : on l'a vu précédemment quand on parle de dates dans le futur,
+
+0:37:36.900,0:37:48.500
+il faudra stocker la timezone de la personne à l'origine de votre donnée sinon les potentiels changements de TZ Table vont vous impacter 
+
+0:37:49.080,0:37:52.460
+Nouvelle bonne pratique : attention aux heures locales
+
+0:37:52.460,0:38:03.600
+Une heure locale c'est une heure qui est sans date rattachée : "J'aimerais planifier une réunion à 15 heures tous les lundis" (sous-entendu timezone Europe/Paris)
+
+0:38:04.230,0:38:10.200
+Vu qu'on n'a pas trop le temps je vous donne la bonne pratique directement :
+
+0:38:10.700,0:38:22.600
+Là aussi, il n'y a pas de secrets, il va falloir stocker la timezone de votre utilisateur à l'origine de cette réunion à 15 heures tous les lundis.
+
+0:38:23.370,0:38:33.100
+Je vous montre un peu le déroulé dans le cas où on souhaiterait calculer le timestamp de départ de la réunion du dernier lundi d'avril
+
+0:38:33.660,0:38:43.300
+Première chose : quelle est la date du dernier lundi d'avril ? C'est le 29 avril 2019 et ici, on parle d'une date locale, car sans heure attachée
+
+0:38:43.859,0:38:51.000
+Je n'ai pas réussi à localiser de manière précise, sur une frise chronologique, à quel moment ça correspond, donc c'est une date locale
+
+0:38:51.569,0:38:57.129
+À cette date locale je vais rajouter le "15 heures" que j'ai stocké, à la création de l'évènement récurrent
+
+0:38:57.129,0:39:04.000
+et je vais déterminer le timezone offset, pour ma timezone, de cette heure locale
+
+0:39:04.500,0:39:14.300
+Si je n'avais pas stocké le "Europe/Paris", je n'aurais pas pu savoir que le 29 avril 2019, j'étais en UTC+2
+
+0:39:14.800,0:39:26.000
+Il faut vraiment la timezone pour être capable de savoir quel timezone offset il va falloir prendre ici
+
+0:39:26.459,0:39:31.300
+Attention : à cette étape-là, vous êtes susceptible de tomber dans un local time gap
+
+0:39:31.859,0:39:42.300
+Si ma réunion je l'avais placée à 2h30 du matin, j'aurais pu tomber sur une date qui n'existe pas en Europe/Paris. Il faut donc bien faire attention à ce cas de figure ici.
+
+0:39:42.869,0:39:50.149
+L'autre point qui est intéressant en ayant cette timezone en main, c'est qu'il est possible de faire des translations
+
+0:39:50.600,0:40:01.200
+A l'étape 2, nous obtenons donc un timestamp qui permet de représenter chronologiquement le moment temporel où la réunion a lieu
+
+0:40:01.700,0:40:05.000
+On peut alors translater ce moment dans n'importe quelle timezone
+
+0:40:05.500,0:40:12.400
+Si par exemple, la réunion concerne quelqu'un qui est à New York, je peux savoir qu'à ce timestamp là, dans la timezone America/NewYork, on est en UTC-4
+
+0:40:12.900,0:40:21.600
+Je n'ai alors qu'à soustraire 6 heures à mon heure locale de Paris pour obtenir 9h heure locale de New York
+
+0:40:22.160,0:40:26.700
+Tout ça, c'est ce que je mets dans la famille des Time-Only patterns
+
+0:40:27.170,0:40:33.700
+La bonne pratique, ici, c'est de systématiquement stocker la timezone de l'utilisateur qui saisit les heures
+
+0:40:34.190,0:40:40.700
+Cette timezone : soit vous la déduisez, soit vous la faites explicitement saisir à votre utilisateur
+
+0:40:41.360,0:40:45.800
+Deuxième bonne pratique : évitez de stocker votre time dans un datetime.
+
+0:40:45.800,0:40:51.500
+C'est quelque chose que j'ai vu assez souvent : on n'a pas de structure de donnée pour un time, donc on se sert du datetime pour le stockage
+
+0:40:51.550,0:40:55.600
+et on se retrouve avec une datetime au 1er Janvier 1970 un peu de manière arbitraire
+
+0:40:56.300,0:41:05.600
+C'est loin d'être idéal car votre SGBD va potentiellement vous transformer votre heure en heure UTC
+
+0:41:06.140,0:41:11.619
+Pour moi, la bonne pratique c'est de simplement stocker votre heure sous forme d'une chaîne de caractères
+
+0:41:12.140,0:41:17.500
+Ajoutez la timezone à coté, et ça sera parfait.
+
+0:41:18.080,0:41:27.000
+Dernière recommandation qui concerne davantage vos API : quand vous travaillez avec des timezones en écriture et en lecture
+
+0:41:27.590,0:41:40.600
+C'est pas mal de donner, lors de la lecture, une timezone cible afin que ce soit le serveur qui fasse la translation vers cette timezone cible
+
+0:41:41.390,0:41:44.300
+Le pendant des Time-only patterns, c'est les Date-only patterns
+
+0:41:44.900,0:41:52.400
+Ce sont typiquement les dates de naissance : vous avez juste une date, sans heure associée
+
+0:41:52.970,0:42:01.500
+Ici, il n'y a pas vraiment de silver bullet car beaucoup de cas sont possibles
+
+0:42:02.000,0:42:09.300
+Le meilleur conseil que je pourrais vous donner est d'utiliser une structure de données ad-hoc qui vous évitera de faire n'importe quoi avec votre date
+
+0:42:09.860,0:42:16.700
+Par exemple, si vous souhaitez calculer le nombre de millisecondes qui se sont écoulées entre deux dates, ce n'est pas une bonne chose
+
+0:42:17.300,0:42:23.900
+parce que vos dates, vous n'avez potentiellement pas de timezone associée et vous n'êtes pas en mesure de les représenter clairement sur une frise temporelle
+
+0:42:24.400,0:42:28.090
+C'est quelque chose d'assez abstrait, et si vous utilisez une structure de données ad-hoc,
+
+0:42:28.790,0:42:33.200
+Normalement cette structure de données ne vous permettra pas de faire n'importe quoi avec cette date
+
+0:42:33.710,0:42:38.919
+Point suivant : évitez de stocker votre date dans un datetime. Ça aussi, je l'ai rencontré assez souvent.
+
+0:42:39.740,0:42:44.100
+Sur ce point, je suis un peu moins tranché que sur le slide précédent
+
+0:42:44.690,0:42:52.100
+Par contre l'astuce que je peux vous partager, c'est que si vous n'avez pas le choix de stocker votre date sous la forme d'un datetime
+
+0:42:52.610,0:43:00.900
+Stockez-la sous la forme d'un datetime positionné à 12:00 UTC au lieu de 00:00 UTC (on a souvent tendance à utiliser minuit UTC arbitrairement)
+
+0:43:01.490,0:43:10.300
+Pourquoi à 12:00 UTC ? Je pense que vous vous êtes déjà fait avoir par le bug où vous avez une date et où vous prenez un shift d'1-2h sur votre timezone offset
+
+0:43:10.700,0:43:15.040
+Qui fait que vous tombez la veille à 22-23 heures, avec une date qui a changé : Perdu !
+
+0:43:15.890,0:43:24.600
+Si vous stockez votre date à 12:00, c'est une astuce qui est un peu limite mais votre shift va rester tout le temps à la même date
+
+0:43:25.390,0:43:30.269
+Ça signifie que vous rencontrerez le bug vu précédemment uniquement sur des timezones en UTC+12 à UTC+14
+
+0:43:30.489,0:43:41.200
+Ce qui sera toujours mieux que d'avoir ce bug sur toutes les timezones entre UTC et UTC+14
+
+0:43:41.769,0:43:45.000
+Derniers points : si vous êtes sûr de la timezone, stockez-là
+
+0:43:45.000,0:43:52.200
+C'est un peu le credo de tout ce talk : si vous avez l'information de la timezone, il s'agit vraiment d'une information importante qui doit être stockée
+
+0:43:52.630,0:43:56.339
+Dernier point : les Datetime "locales". C'est quelque chose que j'ai tendance à proscrire.
+
+0:43:56.529,0:44:02.248
+Une Local Datetime, c'est une date & heure sans timezone associée. 
+
+0:44:02.979,0:44:06.569
+On n'est donc pas capable de les positionner sur une frise chronologique c'est pourquoi je trouve que ce n'est pas une bonne idée.
+
+0:44:07.390,0:44:11.160
+Je n'ai plus beaucoup de temps donc je ne vais pas argumenter des heures : il y a un très bon blog post dessus qui donne plein de bons arguments
+
+0:44:13.479,0:44:17.279
+Le conseil c'est donc de plutôt les éviter.
+
+0:44:21.549,0:44:22.297
+Pour conclure...
+
+0:44:22.297,0:44:24.119
+Considérez bien toutes les perspectives
+
+0:44:25.089,0:44:27.899
+Faites bien la distinction entre heure standard et heure locale
+
+0:44:28.450,0:44:31.700
+Les timezones changent potentiellement rapidement 
+
+0:44:32.200,0:44:34.158
+Mettez donc régulièrement à jour vos TZ Data
+
+0:44:34.158,0:44:41.100
+Évitez de stocker les dates dans le futur. Si vous n'avez pas le choix, stockez l'heure locale et la timezone de cette date dans le futur
+
+0:44:41.619,0:44:44.500
+Lors des opérations sur les dates et les heures, utilisez la bonne échelle de temps
+
+0:44:45.000,0:44:47.200
+Ne faites pas confiance à l'objet Date en javascript
+
+0:44:47.799,0:44:49.799
+Stockez et faites vos recherches en UTC
+
+0:44:50.259,0:44:55.379
+Interrogez-vous lorsque vous faites des recherches sur des dates uniques sans range : il ya peut-être une range qui se cache derrière votre besoin
+
+0:44:56.229,0:44:59.300
+Ne prenez rien comme acquis et questionnez-vous vraiment tout le temps
+
+0:44:59.800,0:45:05.100
+En préparant ce talk, je savais qu'il y avait plein de subtilités sur les Dates et le Temps et j'en ai découvert ... encore plus
+
+0:45:05.500,0:45:09.500
+Et je pense que je suis loin de toutes les avoir parcourues
+
+0:45:10.000,0:45:16.000
+J'espère que je vous ai levé un petit flag sur ce sujet-là
+
+0:45:16.500,0:45:20.200
+Merci, si vous avez des questions... on peut voir ça après.
