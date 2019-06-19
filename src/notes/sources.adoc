@@ -75,6 +75,7 @@ Bibliographie :
 - https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/2532962#2532962
 - https://stackoverflow.com/questions/2532729/daylight-saving-time-and-time-zone-best-practices/3269325#3269325
 - https://codeofmatt.com/author/matt/
+- http://yourcalendricalfallacyis.com/
 
 
 Merci enfin à Hubert Sablonnière pour son outil [bespoke]() (que je n'ai finalement pas utilisé pour ce premier run)
